@@ -1,0 +1,26 @@
+<md-dialog aria-label="Grafiek" style="max-width: 50%; min-width: 50%;">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Grafiek</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="answer('not applicable')">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div>
+                <canvas id="line" class="chart chart-line" data="data"
+                        labels="labels" series="series"
+                        click="onClick">
+                </canvas>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button ng-click="answer('sluiten')" class="md-primary">
+                Sluiten
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

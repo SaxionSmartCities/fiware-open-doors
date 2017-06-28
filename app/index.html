@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl" ng-app="org.open-doors" ng-strict-di="false" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="The Open Doors example application.">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title>Open Doors</title>
+    <!--<base href="/" />-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(app) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../bower_components/Leaflet.label/dist/leaflet.label.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(app) styles/main.css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- endbuild -->
+
+</head>
+<body ng-controller="BodyController" layout="row">
+
+<!-- Sidenav -->
+<md-sidenav id="sidenav" class="md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+
+    <!-- Toolbar -->
+    <md-toolbar class="md-toolbar-tools">
+
+        <!-- Title -->
+        <h2 class="ng-cloak">Menu</h2>
+
+        <!-- Fill -->
+        <span flex></span>
+
+    </md-toolbar>
+
+    <!-- Sidenav content -->
+    <md-content>
+        <md-list>
+            <md-list-item ng-repeat="item in bodyService.listItems" id="item-{{item.id}}">
+                <div class="md-list-item-text" flex>
+                    <p class="ng-cloak">{{item.title}}</p>
+                </div>
+                <md-checkbox ng-model="item.active"></md-checkbox>
+            </md-list-item>
+        </md-list>
+
+        <!-- Accordion for winkels -->
+        <ang-accordion>
+            <collapsible-item item-title="Winkels">
+
+                <!-- Main checkbox for all winkels-->
+                <md-list-item>
+                    <div class="md-list-item-text" flex>
+                        <p>Alle winkels</p>
+                    </div>
+                    <md-checkbox ng-model="bodyService.allShopsActive" ng-change="updateAllShops()"></md-checkbox>
+                </md-list-item>
+
+                <!-- All winkel categories-->
+                <md-list-item ng-repeat="shop in bodyService.shopItems" id="item-{{shop.id}}">
+                    <div class="md-list-item-text" flex>
+                        <p class="ng-cloak">{{shop.title}}</p>
+                    </div>
+                    <md-checkbox ng-model="shop.active" ng-change="checkCheckedShops()"></md-checkbox>
+                </md-list-item>
+            </collapsible-item>
+        </ang-accordion>
+
+        <!-- Accordion for monuments -->
+        <ang-accordion>
+            <collapsible-item item-title="Monumenten">
+
+                <!-- Main checkbox for all monuments-->
+                <md-list-item>
+                    <div class="md-list-item-text" flex>
+                        <p>Alle monumenten</p>
+                    </div>
+                    <md-checkbox ng-model="bodyService.allMonumentsActive"></md-checkbox>
+                </md-list-item>
+
+                <!-- All monuments categories-->
+                <md-list-item ng-repeat="monument in bodyService.monumentItems" id="item-{{monument.id}}">
+                    <div class="md-list-item-text" flex>
+                        <p class="ng-cloak">{{monument.title}}</p>
+                    </div>
+                    <md-checkbox ng-model="monument.active"></md-checkbox>
+                </md-list-item>
+            </collapsible-item>
+        </ang-accordion>
+    </md-content>
+
+</md-sidenav>
+
+<!-- Main content view -->
+<md-content id="main-content" layout="column" flex>
+
+    <!-- Toolbar -->
+    <md-toolbar class="md-toolbar-tools">
+
+        <!-- Action button -->
+        <md-button class="md-icon-button" aria-label="Side nav" ng-click="openSideNav()" ng-if="!$mdMedia('gt-md')">
+            <md-icon md-svg-icon="img/icons/ic_menu.svg"></md-icon>
+        </md-button>
+
+        <!-- Title -->
+        <h2 class="ng-cloak">Open Doors</h2>
+
+        <!-- Fill -->
+        <span flex></span>
+
+        <div class="ng-cloak">{{homeService.temperature}}&deg;</div>
+        <!--<i class="material-icons md-36"-->
+           <!--ng-controller="OpenDialogController" ng-click="showTemperatureGraph()"-->
+           <!--ng-class="{sun: hover}"-->
+           <!--ng-mouseenter="hover = true"-->
+           <!--ng-mouseleave="hover = false">wb_sunny</i>-->
+    </md-toolbar>
+
+    <!-- Content -->
+    <md-content layout="column" flex ng-view></md-content>
+
+</md-content>
+
+
+<!-- build:js(app) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-loader/angular-loader.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="../bower_components/moment/min/moment-with-locales.js"></script>
+    <!--<script src="../bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>-->
+    <script src="../bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="../bower_components/ui-leaflet/dist/ui-leaflet.js"></script>
+    <script src="../bower_components/chart.js/dist/Chart.js"></script>
+    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="../bower_components/ang-accordion/js/ang-accordion.js"></script>
+    <script src="../bower_components/Leaflet.label/dist/leaflet.label.js"></script>
+<!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(app) scripts/scripts.js -->
+    <script src="app.js"></script>
+    <script src="constants.js"></script>
+    <script src="js/common/body.service.js"></script>
+    <script src="js/common/body.controller.js"></script>
+    <script src="js/home/home.controller.js"></script>
+    <script src="js/home/home.service.js"></script>
+    <script src="js/dialog/dialog.controller.js"></script>
+    <script src="js/dialog/dialog.service.js"></script>
+    <script src="js/dialog/opendialog.controller.js"></script>
+    <script src="js/http-interceptor.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
