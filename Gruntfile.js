@@ -19,7 +19,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-version');
-    // grunt.loadNpmTasks('grunt-bower-freeze');
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
@@ -208,12 +207,12 @@ module.exports = function (grunt) {
         ngtemplates: {
             dist: {
                 options: {
-                    module: 'grapevineGlass',
+                    module: 'org.open-doors',
                     htmlmin: '<%= htmlmin.dist.options %>',
                     usemin: 'scripts/scripts.js'
                 },
                 cwd: '<%= yeoman.app %>',
-                src: ['views/**/*.html', 'components/**/*.html', '!views/test/*.html', '!components/{bubble-view,card,carousel,gallery,sky}/*.html'],
+                src: ['js/**/*.tpl.html'],
                 dest: '.tmp/templateCache.js'
             }
         },
@@ -242,6 +241,8 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>',
                     '<%= yeoman.dist %>/fonts',
                     '<%= yeoman.dist %>/images',
+                    '<%= yeoman.dist %>/images/icons',
+                    '<%= yeoman.dist %>/images/markers',
                     '<%= yeoman.dist %>/styles/',
                     '<%= yeoman.dist %>/styles/fonts',
                     '<%= yeoman.dist %>/styles/images'
@@ -249,6 +250,9 @@ module.exports = function (grunt) {
                 patterns: {
                     js: [
                             [/(images\/[^'"]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images in JS']
+                    ],
+                    html: [
+                        [/(images\/[^'"]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images in HTML']
                     ]
                     // css: [
                     //         //[/(images\/[^'"]*\.(png|jpg|jpeg|gif|webp|svg))/img,
@@ -385,7 +389,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.svg',
+                    src: '{,**/}*.svg',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -459,16 +463,6 @@ module.exports = function (grunt) {
                     cwd: '.tmp/images',
                     dest: '<%= yeoman.dist %>/images',
                     src: ['generated/*']
-                }, {
-                    expand: true,
-                    cwd: 'bower_components/bootstrap-css-only',
-                    src: 'fonts/*',
-                    dest: '<%= yeoman.dist %>'
-                }, {
-                    expand: true,
-                    cwd: 'bower_components/videogular-themes-default',
-                    src: 'fonts/*',
-                    dest: '<%= yeoman.dist %>/styles'
                 }]
             },
             styles: {
@@ -476,7 +470,7 @@ module.exports = function (grunt) {
                 flatten: true,
                 cwd: '<%= yeoman.app %>',
                 dest: '.tmp/styles/',
-                src: ['**/*.css', '!styles/{bubbleView,buzzcuit,gallery,scrollbar,viewer}.css']
+                src: ['**/*.css']
             }
         },
 
@@ -510,13 +504,6 @@ module.exports = function (grunt) {
                 src: ['<%= yeoman.app %>/app.js']
             }
         },
-
-        bowerfreeze: {
-            freeze: {
-                src: 'bower.json',
-                dest: 'bower-frozen.json'
-            }
-        }
     });
 
 
@@ -560,6 +547,7 @@ module.exports = function (grunt) {
         'cssmin:generated', // Minify the CSS and store it in the distribution folder
         'uglify:generated', // Minify and mangle your JS
         'imagemin',         // Optimizes your images and store them in the distribution folder
+        'svgmin',           // Optimizes your images and store them in the distribution folder
         'copy:dist',        // Copy html and assets to distribution folder
         'filerev',          // Creates unique hashes and re-names your new JS/CSS/etc files
         'usemin',           // Updates the references in HTML and JS with the new files

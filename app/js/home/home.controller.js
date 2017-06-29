@@ -183,7 +183,7 @@ function HomeController(C, $scope, bodyService, homeService, leafletData, $mdDia
         //create a custom button
         var centerLocationButtonOptions = {
             'text': '',
-            'iconUrl': 'img/icons/locate.png',  // string
+            'iconUrl': 'images/icons/locate.png',  // string
             'onClick': centerOnLocation,  // callback function
             'hideText': true,  // bool
             'maxWidth': 30,  // number

@@ -47,139 +47,139 @@ angular.module('org.open-doors')
 		// Markers
 		MARKERS: {
             GROUNDWATER: {
-                iconUrl: 'img/markers/water.png',
+                iconUrl: 'images/markers/water.png',
                 iconSize: [32, 37], // size of the icon
                 iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
                 popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
             },
 			PARKING: {
-				iconUrl: 'img/markers/parkinggarage.png',
+				iconUrl: 'images/markers/parkinggarage.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			MUSEUM: {
-				iconUrl: 'img/markers/museum_art.png',
+				iconUrl: 'images/markers/museum_art.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			TOILET: {
-				iconUrl: 'img/markers/toilets.png',
+				iconUrl: 'images/markers/toilets.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			MONUMENT: {
-				iconUrl: 'img/markers/monument.png',
+				iconUrl: 'images/markers/monument.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			FARM: {
-				iconUrl: 'img/markers/farm-2.png',
+				iconUrl: 'images/markers/farm-2.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			GRAVE: {
-				iconUrl: 'img/markers/catholicgrave.png',
+				iconUrl: 'images/markers/catholicgrave.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			INDUSTRY: {
-				iconUrl: 'img/markers/factory.png',
+				iconUrl: 'images/markers/factory.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			CHURCH: {
-				iconUrl: 'img/markers/church-2.png',
+				iconUrl: 'images/markers/church-2.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			HOUSE: {
-				iconUrl: 'img/markers/villa.png',
+				iconUrl: 'images/markers/villa.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			BORDER: {
-				iconUrl: 'img/markers/levelcrossing.png',
+				iconUrl: 'images/markers/levelcrossing.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			SPORT: {
-				iconUrl: 'img/markers/soccer.png',
+				iconUrl: 'images/markers/soccer.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			CROSS: {
-				iconUrl: 'img/markers/cross-2.png',
+				iconUrl: 'images/markers/cross-2.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			SYNAGOGUE: {
-				iconUrl: 'img/markers/synagogue-2.png',
+				iconUrl: 'images/markers/synagogue-2.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			VILLA: {
-				iconUrl: 'img/markers/villa.png',
+				iconUrl: 'images/markers/villa.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			SHOES: {
-				iconUrl: 'img/markers/shoes.png',
+				iconUrl: 'images/markers/shoes.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			SUPERMARKET: {
-				iconUrl: 'img/markers/supermarket.png',
+				iconUrl: 'images/markers/supermarket.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			ELECTRONIC: {
-				iconUrl: 'img/markers/computers.png',
+				iconUrl: 'images/markers/computers.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			CLOTHES: {
-				iconUrl: 'img/markers/clothers_female.png',
+				iconUrl: 'images/markers/clothers_female.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			MARKET: {
-				iconUrl: 'img/markers/market.png',
+				iconUrl: 'images/markers/market.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			HOME: {
-				iconUrl: 'img/markers/homecenter.png',
+				iconUrl: 'images/markers/homecenter.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			HARDWARE: {
-				iconUrl: 'img/markers/tools.png',
+				iconUrl: 'images/markers/tools.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
 			},
 			PERSON: {
-				iconUrl: 'img/markers/you-are-here-2.png',
+				iconUrl: 'images/markers/you-are-here-2.png',
 				iconSize: [32, 37], // size of the icon
 				iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
 				popupAnchor: [0, -37] // point from which the popup should open relative to the iconAnchor
