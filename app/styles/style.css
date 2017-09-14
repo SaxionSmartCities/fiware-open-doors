@@ -77,3 +77,8 @@
 .leaflet-buttons-control-img {
   vertical-align: middle;
 }
+
+
+.leaflet-popup-content a:hover {
+  cursor: pointer;
+}

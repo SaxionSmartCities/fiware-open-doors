@@ -1,6 +1,7 @@
 /**
  * Created by Ruben on 17-6-2015.
  */
+'use strict';
 angular.module('org.open-doors')
     .controller('DialogController', DialogController);
 

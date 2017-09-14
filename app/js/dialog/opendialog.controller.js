@@ -2,6 +2,7 @@
  * Created by Lars on 19-6-2015.
  */
     // Show graph onclick
+'use strict';
 angular.module('org.open-doors')
     .controller('OpenDialogController', OpenDialogController);
 

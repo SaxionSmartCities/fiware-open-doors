@@ -1,24 +1,34 @@
 {
-  "strict": "global",
+  "globalstrict": true,
+  "strict":true,
+  "noempty":false,
+  "noarg":true,
+  "unused": "vars",
+  "eqeqeq":true,
+  "browser":true,
+  "bitwise":true,
+  "curly":true,
+  "undef":true,
+  "nonew":true,
+  "forin":true,
   "globals": {
     // Angular
     "angular": false,
-
     // Angular mocks
     "module": false,
     "inject": false,
-
     // Jasmine
     "jasmine": false,
     "describe": false,
-    "beforeEach": false,
-    "afterEach": false,
     "it": false,
     "expect": false,
-
+    "beforeEach": false,
+    "afterEach": false,
     // Protractor
     "browser": false,
     "element": false,
-    "by": false
+    "by": false,
+
+    "require": false
   }
 }

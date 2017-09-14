@@ -1,6 +1,7 @@
 /**
  * Created by yourilefers on 26-05-15.
  */
+'use strict';
 angular.module('org.open-doors')
 	.factory('bodyService', bodyService);
 

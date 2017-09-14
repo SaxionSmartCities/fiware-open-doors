@@ -1,3 +1,4 @@
+'use strict';
 angular.module('org.open-doors')
 	.constant('C', {
 		parkingService : {
@@ -11,7 +12,7 @@ angular.module('org.open-doors')
                 "Enschede-P3": "da123371-2305-4eee-9de0-993f26e649fb",
                 "Enschede-P4": "3dbb7feb-405e-4595-a020-83418b9bb706",
                 "Enschede-P5": "8d742616-08b2-4e42-86ba-650f91cb21fc",
-                "Enschede-P6": "b2ce3aa3-0053-457f-a3e7-f9171ba37d69",
+                "Enschede-P6": "b2ce3aa3-0053-457f-a3e7-f9171ba37d69"
             }
 			// intervalSecs: 30
 		},
@@ -50,7 +51,7 @@ angular.module('org.open-doors')
 
 		QUERY: {
 			GARAGE: "http://ckan.smartenschede.nl/api/action/datastore_search_sql?sql=SELECT \"recvTimeTs\",\"attrName\",\"attrValue\"" +
-				" FROM \"{resourceId}\" WHERE \"recvTimeTs\" >= {oldestTimestamp} ORDER BY \"recvTimeTs\" ASC",
+				" FROM \"{resourceId}\" WHERE \"recvTimeTs\" >= {oldestTimestamp} ORDER BY \"recvTimeTs\" ASC"
 		},
 
 		// Markers

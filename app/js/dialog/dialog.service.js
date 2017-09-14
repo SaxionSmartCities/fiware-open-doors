@@ -1,6 +1,8 @@
 /**
  * Created by Ruben on 18-6-2015.
  */
+'use strict';
+
 angular.module('org.open-doors')
     .factory('dialogService', dialogService);
 
@@ -15,8 +17,6 @@ function dialogService(C, $http) {
         // Clear all arrays
         labels = [];
         resultParking = [];
-        resultTemp = [];
-        parking = true;
         // Start 24 calls for parking data
         // Setup start time
         //Calculate the timezone to use in calculations
