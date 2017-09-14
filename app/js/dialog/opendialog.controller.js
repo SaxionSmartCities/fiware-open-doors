@@ -22,13 +22,4 @@ function OpenDialogController($scope, $mdDialog, dialogService) {
         });
     };
 
-    $scope.showTemperatureGraph = function() {
-        $scope.dialogService.getTemperatureData();
-        $mdDialog.show({
-            controller: 'DialogController',
-            templateUrl: 'js/dialog/dialog.tpl.html',
-            parent: angular.element(document.body)
-        });
-
-    };
 }

@@ -26,52 +26,75 @@ function DialogController($scope, $mdDialog, dialogService) {
         $mdDialog.hide(answer);
     };
 
-    // Update graph when data changes
-    $scope.$watch('dialogService.graphLabels', function() { updateGraphLabels() }, true);
-    $scope.$watch('dialogService.graphResultParking', function() { updateGraphDataDrukte() }, true);
-    $scope.$watch('dialogService.graphResultTemp', function() { updateGraphDataTemp() }, true);
-    $scope.$watch('dialogService.graphResultTempOnly', function() { updateGraphDataTempOnly() }, true);
 
 
     // Empty labels and data
     $scope.labels = [];
     $scope.data = [];
-    $scope.series = ['Parkeerdrukte', 'Temperatuur'];
+    $scope.datasetOverride = [{
+        label: 'Beschikbare plaatsen',
+        data: [],
+        pointRadius: 0
+    }, {
+        label: 'Totaal aantal plaatsen',
+        data: [],
+        pointRadius: 0
+    }];
+    $scope.series = ['Parkeerdrukte', 'Beschikbaar'];
+    $scope.options = {
+        scales: {
+            xAxes: [{
+                display: true,
+                type: 'time',
+                // offset: true,
+                position: 'bottom',
+                time: {
+                    unit: 'hour',
+                    stepSize: 1 / 12,
+                    distribution: 'linear',
+                    bounds: 'data',
+                    displayFormats: {
+                        hour: 'HH:mm'
+                    },
+                    tooltipFormat: 'D MMM HH:mm'
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Tijdstip'
+                },
+                ticks: {
+                    // stepSize: 1
+                }
+            }],
+            yAxes: [{
+                display: true,
+                type: 'linear',
+                position: 'left',
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Beschikbare plaatsen'
+                }
+            }]
+        }
+    };
+    // Update graph when data changes
+    $scope.$watch('dialogService.parkingAvailableSpots', function() { updateGraphDataParking() });
 
     // Update the labels beneath the graph
     function updateGraphLabels() {
         var res = [];
-        for(var i = 0; i < $scope.dialogService.graphLabels.length; i++) {
-            res[i] = $scope.dialogService.graphLabels[i] + ":00";
+        for (var i = 0; i < dialogService.graphLabels.length; i++) {
+            res[i] = dialogService.graphLabels[i] + ":00";
         }
         $scope.labels = res;
     }
 
 
     // Add the density data to the graph
-    function updateGraphDataDrukte() {
-        var res = [];
-        for(var i = 0; i < $scope.dialogService.graphResultParking.length; i++) {
-            res[i] = $scope.dialogService.graphResultParking[i];
+    function updateGraphDataParking() {
+        if (dialogService.parkingAvailableSpots && dialogService.parkingTotalSpots) {
+            $scope.data = [ dialogService.parkingAvailableSpots, dialogService.parkingTotalSpots ];
         }
-        $scope.data = [ res, $scope.data[1] ];
     }
 
-    // Add the temperature data to the graph
-    function updateGraphDataTemp() {
-        var res = [];
-        for(var i = 0; i < $scope.dialogService.graphResultTemp.length; i++) {
-            res[i] = $scope.dialogService.graphResultTemp[i];
-        }
-        $scope.data = [ $scope.data[0], res ];
-    }
-
-    // Add the temperature only to the graph
-    function updateGraphDataTempOnly() {
-        var res = [];
-        for(var i = 0; i < $scope.dialogService.graphResultTempOnly.length; i++) {
-            res[i] = $scope.dialogService.graphResultTempOnly[i];
-        }
-        $scope.data = [ res ];
-    }
 }

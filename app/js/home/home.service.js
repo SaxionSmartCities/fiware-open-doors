@@ -396,7 +396,7 @@
                             // Setup
                             var toAdd = {
                                 id: item.id,
-                                title: item.name.value.value,
+                                title: item.name.value,
                                 max: parseInt(item.totalSpotNumber.value),
                                 free: parseInt(item.availableSpotNumber.value),
                                 lastUpdate: item.dateModified.value,

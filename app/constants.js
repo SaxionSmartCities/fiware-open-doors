@@ -1,9 +1,18 @@
 angular.module('org.open-doors')
 	.constant('C', {
 		parkingService : {
-			url: 'http://orion.iot.yaath.com/v2/entities',
+			url: 'http://orion.smartenschede.nl/v2/entities',
 			fiwareService: 'ParkingService',
-			fiwareServicePath: '/nl/enschede'
+			fiwareServicePath: '/nl/enschede',
+            resources : {
+			    "Enschede-P":  "b04a99bd-cc19-4e2c-a60f-7886ca457bad",
+                "Enschede-P1": "1d3a807f-c7da-4245-b10c-0610d7f25f90",
+                "Enschede-P2": "9128e1d1-a8be-4fec-80a2-78e24c897ba9",
+                "Enschede-P3": "da123371-2305-4eee-9de0-993f26e649fb",
+                "Enschede-P4": "3dbb7feb-405e-4595-a020-83418b9bb706",
+                "Enschede-P5": "8d742616-08b2-4e42-86ba-650f91cb21fc",
+                "Enschede-P6": "b2ce3aa3-0053-457f-a3e7-f9171ba37d69",
+            }
 			// intervalSecs: 30
 		},
         groundwaterService : {
@@ -40,8 +49,8 @@ angular.module('org.open-doors')
 		},
 
 		QUERY: {
-			GARAGE: "SELECT round(avg(free_spots)) FROM \"fa96f9fa-011d-43ff-ad28-77ea5b09882a\" WHERE name = '{n}' AND last_update > {st} AND last_update < {et}",
-			TEMPERATURE: "SELECT round(avg(temperature)) FROM \"db47c555-1ead-4e68-8538-24fb8bd01b33\" WHERE last_update > {st} AND last_update < {et}"
+			GARAGE: "http://ckan.smartenschede.nl/api/action/datastore_search_sql?sql=SELECT \"recvTimeTs\",\"attrName\",\"attrValue\"" +
+				" FROM \"{resourceId}\" WHERE \"recvTimeTs\" >= {oldestTimestamp} ORDER BY \"recvTimeTs\" ASC",
 		},
 
 		// Markers
