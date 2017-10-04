@@ -25,7 +25,7 @@ angular.module('org.open-doors')
         weatherService : {
             url: 'http://orion.smartenschede.nl/v2/entities?id=nl-enschede',
             fiwareService: 'WeatherService',
-            fiwareServicePath: '/'
+            fiwareServicePath: '/nl'
         },
 		// URL's
 		URL: {

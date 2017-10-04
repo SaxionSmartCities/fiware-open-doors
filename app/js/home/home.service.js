@@ -370,6 +370,13 @@
                 });
         }
 
+        function getReadableDate(date) {
+            var v;
+            if (date) {
+                v = date.toLocaleString();
+            }
+            return v;
+        }
         function retrieveParkeerplaatsDataV2() {
             var desc = C.parkingService;
             var headers = {
@@ -399,13 +406,24 @@
                                 title: item.name.value,
                                 max: parseInt(item.totalSpotNumber.value),
                                 free: parseInt(item.availableSpotNumber.value),
-                                lastUpdate: item.dateModified.value,
+                                lastUpdate: new Date(item.dateModified.value),
                                 lat: parseFloat(item.location.value.coordinates[0]),
                                 lng: parseFloat(item.location.value.coordinates[1]),
                                 icon: C.MARKERS.PARKING
                             };
-                            var temp = "<h4>" + toAdd.title + "</h4>Aantal vrij: " + toAdd.free + "<br>Totaal: " + toAdd.max + "<div ng-controller='OpenDialogController'><br><br><b>Bekijk grafiek</b><br><a ng-click=\"showGraph('" + item.id + "')\">Klik hier</a></div>";
+                            var temp = "<h4>" + toAdd.title + "</h4>";
+                            var availability =
+                                "Per " + toAdd.lastUpdate.toLocaleString('nl') + ":<br>" +
+                                "Aantal vrij: " + toAdd.free + "<br>" +
+                                "Totaal: " + toAdd.max +
+                                "<div ng-controller='OpenDialogController'><br><br>" +
+                                "<b>Bekijk grafiek</b><br>" +
+                                "<a ng-click=\"showGraph('" + item.id + "')\">Klik hier</a>" +
+                                "</div>";
                             toAdd.message = temp;
+                            if (toAdd.lastUpdate.getTime() > Date.now() - 24 * 60 * 60 * 1000) {
+                                toAdd.message += availability;
+                            }
 
                             // Add to the list
                             list.push(toAdd);
