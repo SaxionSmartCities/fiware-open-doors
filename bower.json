@@ -1,7 +1,7 @@
 {
   "name": "open-doors",
   "description": "Open Doors Enschede app",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "homepage": "http://open-doors.org",
   "license": "MIT",
   "private": true,

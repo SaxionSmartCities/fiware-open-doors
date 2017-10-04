@@ -1,7 +1,7 @@
 {
   "name": "OpenDoorsApp",
   "private": true,
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "OpenDoors Enschede",
   "repository": "https://github.com/angular/angular-seed",
   "license": "MIT",
