@@ -37,7 +37,7 @@ angular.module('org.open-doors')
 			MOMUNEMT: 'http://ckan.smartenschede.nl/dataset/96d9cc39-d123-4b3c-8861-525d99eedf59/resource/e70e9bc4-bbc1-4710-aed0-166cf002775f/download/monumenten.json',
 			MUSEA: 'http://ckan.smartenschede.nl/dataset/655e7da6-d50d-457b-9f72-aa341eb89642/resource/c7f1569c-672d-4f23-aa64-0f40f4d7cf2e/download/musea.json',
 			WINKELS: 'http://ckan.smartenschede.nl/dataset/a3124a08-c56f-4e93-9d39-1736e3fbe75a/resource/4a796846-0555-4470-8bbf-a0762f4dd5ad/download/Winkels.json',
-			CKAN_QUERY: 'http://ckan.smartenschede.nl/api/action/datastore_search_sql?sql='
+			CKAN_QUERY: 'https://ckan.smartenschede.nl/api/action/datastore_search_sql?sql='
 		},
 
 		// Intervals in seconds
@@ -50,7 +50,7 @@ angular.module('org.open-doors')
 		},
 
 		QUERY: {
-			GARAGE: "http://ckan.smartenschede.nl/api/action/datastore_search_sql?sql=SELECT \"recvTimeTs\",\"attrName\",\"attrValue\"" +
+			GARAGE: "https://ckan.smartenschede.nl/api/action/datastore_search_sql?sql=SELECT \"recvTimeTs\",\"attrName\",\"attrValue\"" +
 				" FROM \"{resourceId}\" WHERE \"recvTimeTs\" >= {oldestTimestamp} ORDER BY \"recvTimeTs\" ASC"
 		},
 
