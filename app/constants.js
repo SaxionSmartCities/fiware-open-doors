@@ -2,7 +2,7 @@
 angular.module('org.open-doors')
 	.constant('C', {
 		parkingService : {
-			url: 'http://orion.smartenschede.nl/v2/entities',
+			url: 'https://orion.smartenschede.nl/v2/entities',
 			fiwareService: 'ParkingService',
 			fiwareServicePath: '/nl/enschede',
             resources : {
@@ -17,26 +17,26 @@ angular.module('org.open-doors')
 			// intervalSecs: 30
 		},
         groundwaterService : {
-            url: 'http://orion.smartenschede.nl/v2/entities',
+            url: 'https://orion.smartenschede.nl/v2/entities',
             fiwareService: 'GroundwaterService',
             fiwareServicePath: '/nl/enschede'
             // intervalSecs: 30
         },
         weatherService : {
-            url: 'http://orion.smartenschede.nl/v2/entities?id=nl-enschede',
+            url: 'https://orion.smartenschede.nl/v2/entities?id=nl-enschede',
             fiwareService: 'WeatherService',
             fiwareServicePath: '/nl'
         },
 		// URL's
 		URL: {
-			TEMPERATUUR: 'http://orion.smartenschede.nl/NGSI10/contextEntityTypes/temperature',
-			PARKEREN: 'http://orion.smartenschede.nl/NGSI10/contextEntityTypes/parking',
-            PARKERENV2: 'http://orion.smartenschede.nl/v2/entities',
-			DRUKTE: 'http://orion.smartenschede.nl/NGSI10/contextEntityTypes/trafficdensity',
-			WC: 'http://ckan.smartenschede.nl/dataset/d2060885-74c8-4f23-bb91-7c68bcaf5c58/resource/d96e9db0-2e83-4970-94c1-15cc2130b030/download/wcees.json',
-			MOMUNEMT: 'http://ckan.smartenschede.nl/dataset/96d9cc39-d123-4b3c-8861-525d99eedf59/resource/e70e9bc4-bbc1-4710-aed0-166cf002775f/download/monumenten.json',
-			MUSEA: 'http://ckan.smartenschede.nl/dataset/655e7da6-d50d-457b-9f72-aa341eb89642/resource/c7f1569c-672d-4f23-aa64-0f40f4d7cf2e/download/musea.json',
-			WINKELS: 'http://ckan.smartenschede.nl/dataset/a3124a08-c56f-4e93-9d39-1736e3fbe75a/resource/4a796846-0555-4470-8bbf-a0762f4dd5ad/download/Winkels.json',
+			TEMPERATUUR: 'https://orion.smartenschede.nl/NGSI10/contextEntityTypes/temperature',
+			PARKEREN: 'https://orion.smartenschede.nl/NGSI10/contextEntityTypes/parking',
+            PARKERENV2: 'https://orion.smartenschede.nl/v2/entities',
+			DRUKTE: 'https://orion.smartenschede.nl/NGSI10/contextEntityTypes/trafficdensity',
+			WC: 'https://ckan.smartenschede.nl/dataset/d2060885-74c8-4f23-bb91-7c68bcaf5c58/resource/d96e9db0-2e83-4970-94c1-15cc2130b030/download/wcees.json',
+			MOMUNEMT: 'https://ckan.smartenschede.nl/dataset/96d9cc39-d123-4b3c-8861-525d99eedf59/resource/e70e9bc4-bbc1-4710-aed0-166cf002775f/download/monumenten.json',
+			MUSEA: 'https://ckan.smartenschede.nl/dataset/655e7da6-d50d-457b-9f72-aa341eb89642/resource/c7f1569c-672d-4f23-aa64-0f40f4d7cf2e/download/musea.json',
+			WINKELS: 'https://ckan.smartenschede.nl/dataset/a3124a08-c56f-4e93-9d39-1736e3fbe75a/resource/4a796846-0555-4470-8bbf-a0762f4dd5ad/download/Winkels.json',
 			CKAN_QUERY: 'https://ckan.smartenschede.nl/api/action/datastore_search_sql?sql='
 		},
 
